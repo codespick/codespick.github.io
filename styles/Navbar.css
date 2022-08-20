@@ -1,0 +1,294 @@
+@import url(https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap);
+
+.navbar {
+  overflow: hidden;
+  z-index: 9999
+}
+
+.navbar-toggler {
+  border-radius: 20px;
+  background-color: #f5f5f5
+}
+
+.navbar-toggler:focus {
+  border-radius: 20px;
+  background-color: #000;
+  color: #fff
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none
+}
+
+.navbar-collapse {
+  transition-duration: .35s;
+  transition-property: all;
+  transition-delay: 0s;
+  transform-origin: top;
+  transition-timing-function: ease-in-out
+}
+
+.toggle-icon {
+  position: relative;
+  left: -5rem
+}
+
+.sun-ico {
+  color: #ff0
+}
+
+.navbar-nav {
+  align-items: center;
+  margin-left: auto;
+  font-family: "Baloo Paaji 2", cursive;
+  font-weight: 700
+}
+
+.btn {
+  vertical-align: baseline
+}
+
+.dropdown-menu {
+  margin-top: .2rem
+}
+
+.dropdown-menu-hidden {
+  display: none
+}
+
+.dropdown-toggle::after {
+  display: none
+}
+
+.active-path {
+  color: #55d955 !important
+}
+
+.dropmenu-hidden {
+  display: none !important
+}
+
+.nav-link:hover {
+  color: hsl(196deg 59% 51%) !important
+}
+
+.drop-icon-arrow {
+  margin-top: .4rem
+}
+
+.custom-btn:hover {
+  color: #fff !important
+}
+
+@media only screen and (max-width:540px) {
+  .toggle-icon-mobile {
+    margin-top: px
+  }
+
+  .toggle-icon {
+    display: none
+  }
+
+  .search-form-2 {
+    display: none
+  }
+
+  .search-bar {
+    background: 0 0 !important;
+    border: 2px solid #000;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: 0
+  }
+
+  .hidden-inputbox {
+    display: none
+  }
+
+  .show-inputbox {
+    display: block
+  }
+
+  .mobile-items {
+    width: 35% !important;
+    flex-direction: row-reverse;
+    justify-content: space-between
+  }
+
+  .form-2-mobile {
+    display: none !important
+  }
+}
+
+@media only screen and (max-width:447px) {
+  .form-1-mobile {
+    display: none !important
+  }
+
+  .form-2-mobile {
+    display: block !important
+  }
+
+  .toggle-icon {
+    display: none
+  }
+}
+
+@media only screen and (max-width:280px) {
+  .toggle-icon-mobile {
+    margin-top: 5px !important
+  }
+
+  .toggle-icon {
+    display: none
+  }
+
+  .dropdown {
+    text-align-last: center
+  }
+
+  .search-bar {
+    background: 0 0 !important;
+    border: 2px solid #000;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: 0
+  }
+
+  .hidden-inputbox {
+    display: none
+  }
+
+  .show-inputbox {
+    display: block
+  }
+
+  .mobile-items {
+    display: flex;
+    width: 25% !important;
+    flex-direction: row-reverse;
+    justify-content: space-between
+  }
+
+  .search-form-mobile {
+    display: flex !important;
+    width: 65%;
+    flex-direction: row;
+    position: relative !important;
+    bottom: 0rem !important;
+    right: 1rem
+  }
+
+  .form-1-mobile {
+    display: none !important
+  }
+
+  .form-2-mobile {
+    display: block
+  }
+}
+
+@media only screen and (max-width:990px) {
+  .toggle-icon-mobile {
+    margin-top: 2px
+  }
+
+  .toggle-icon {
+    display: none
+  }
+
+  .dropdown {
+    text-align-last: center
+  }
+
+  .search-form-2 {
+    display: none
+  }
+
+  .search-bar {
+    background: 0 0 !important;
+    border: 2px solid #000;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: 0
+  }
+
+  .hidden-inputbox {
+    display: none
+  }
+
+  .show-inputbox {
+    display: block
+  }
+
+  .mobile-items {
+    display: flex;
+    width: 65%;
+    flex-direction: row-reverse;
+    justify-content: space-evenly
+  }
+
+  .form-2-mobile {
+    display: none
+  }
+}
+
+@media only screen and (min-width:991px) {
+  .toggle-icon-mobile {
+    display: none
+  }
+
+  .navbar-nav {
+    font-size: larger
+  }
+
+  .search-form-mobile {
+    display: none
+  }
+
+  .dropdown-menu {
+    position: fixed !important;
+    top: 3.5rem !important;
+    left: auto !important
+  }
+
+  .navbar-expand-pc {
+    height: 4.5rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    transition-duration: .4s;
+    transition-delay: 1ms;
+    transition-property: all;
+    transform-origin: bottom;
+    transition-timing-function: linear
+  }
+
+  .navbar-shrink-pc {
+    height: 3.6rem;
+    transition-duration: .4s;
+    transition-delay: 1ms;
+    transition-property: all;
+    transform-origin: bottom;
+    transition-timing-function: ease-in
+  }
+
+  .form-1-mobile, .form-2-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width:1024px) {
+  .toggle-icon {
+    left: -1rem
+  }
+
+  .form-1-mobile, .form-2-mobile {
+    display: none;
+  }
+}

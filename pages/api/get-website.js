@@ -10,9 +10,10 @@ export default function getWebsite(req, res) {
         res
           .status(404)
           .json({ error: `The search ${req.query.q} could not be found` });
+      } else {
+        res.status(200).send(JSON.parse(data));
       }
       // console.log(JSON.parse(data))
-      res.status(200).send(JSON.parse(data));
     }
   );
 }

@@ -19,11 +19,11 @@ export default async function getAllCppPage(req, res) {
   }
   res.status(200).json(allBlogContents);
 
-  fs.readFile(`pagecontents/${req.query.slug}.json`, "utf-8", (err, data) => {
-    if (err) {
-      res.status(500).json({ error: "Internal server error" });
-    }
-    // console.log(JSON.parse(data))
-    res.status(200).send(JSON.parse(data));
-  });
+  // fs.readFile(`pagecontents/${req.query.slug}.json`, "utf-8", (err, data) => {
+  //   if (err) {
+  //     res.status(500).json({ error: "Internal server error" });
+  //   }
+  //   // console.log(JSON.parse(data))
+  //   res.status(200).send(JSON.parse(data));
+  // });
 }
