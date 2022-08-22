@@ -9,29 +9,29 @@ export default function Home() {
       className={`bg-${colorMode === "#F7F7F7" ? "white" : "rgb(26, 38, 40)"}`}
     >
       <Head>
-        <title>CodePick - Home</title>
-        {/* <meta name="robots" content="index, follow" /> */}
-        {/* <link rel="canonical" href="https://codepick.netlify.app/" /> */}
-        {/* <meta content="general" name="rating" /> */}
-        {/* <link rel="prefetch" href="https://codepick.netlify.app/" /> */}
-        {/* <meta content="codepick.netlify.app" name="copyright" /> */}
-        {/* <link rel="prerender" href="https://codepick.netlify.app/" /> */}
+        <title>CodesPick - Home</title>
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://codespick.herokuapp.com/" />
+        <meta content="general" name="rating" />
+        <link rel="prefetch" href="https://codespick.herokuapp.com/" />
+        <meta content="codespick.herokuapp.com" name="copyright" />
+        <link rel="prerender" href="https://codespick.herokuapp.com/" />
         <meta
           name="description"
-          content="CodePick - Home, CodePick is a platform to learn code with programming language like C, C++, JAVA, PYTHON, JAVASCRIPT, PHP"
+          content="CodesPick - Home, CodesPick is a platform to learn code with programming language like C, C++, JAVA, PYTHON, JAVASCRIPT, PHP"
         />
         <meta
           name="keywords"
-          content="CodePick - Home, CodePick is a platform to learn code with programming language like C, C++, JAVA, PYTHON, JAVASCRIPT, PHP"
+          content="CodesPick - Home, CodesPick is a platform to learn code with programming language like C, C++, JAVA, PYTHON, JAVASCRIPT, PHP"
         />
-        {/* <meta property="og:site_name" content="codepick" />
-        <meta property="og:title" content="codepick" />
+        {/* <meta property="og:site_name" content="CodesPick" />
+        <meta property="og:title" content="CodesPick" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://codepick.netlify.app/" />
+        <meta property="og:url" content="https://codespick.netlify.app/" />
         <meta property="og:locale" content="en-US" /> */}
       </Head>
       <h1 className={`text-${colorMode === "#F7F7F7" ? "black" : "white"}`}>
-        CodePick
+        CodesPick
       </h1>
 
       <div className={`container`}>

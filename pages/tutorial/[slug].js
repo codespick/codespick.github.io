@@ -32,10 +32,10 @@ const Slug = (props) => {
             return (
               <div key={v.slug}>
                 <Head>
-                  <title>{v.title} Tutorial | CodePick</title>
+                  <title>{v.title} Tutorial | CodesPick</title>
                   <meta
                     name="description"
-                    content="This is CodePick. A Website to learn C Language"
+                    content="This is CodesPick. A Website to learn C Language"
                   />
                   {/* <meta name="robots" content="index, follow" /> */}
                   {/* <link rel="canonical" href="https://yourwebsite.com/" /> */}

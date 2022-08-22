@@ -14,7 +14,7 @@ const Search = (props) => {
         return;
       } else if (props.fullData.q !== undefined) {
         let mainData = await fetch(
-          `http://localhost:3000/api/get-website?q=${props.fullData.q}`
+          `${process.env.search_Api}?q=${props.fullData.q}`
         );
         let fullDataInJson = await mainData.json();
         setBlog([fullDataInJson]);
@@ -109,7 +109,7 @@ export async function getServerSideProps(context) {
 
   let { q } = context.query;
 
-  let data = await fetch(`http://localhost:3000/api/get-website?q=${q}`);
+  let data = await fetch(`${process.env.search_Api}?q=${q}`);
 
   // let fullData = await data1.text();
   let fullData = await data.json();
