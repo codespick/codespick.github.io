@@ -8,8 +8,9 @@ const Slug = (props) => {
   const { slug } = router.query;
   const getAnswer = async () => {
     try {
+      // router.reload()
       let mainData = await fetch(
-        `http://localhost:3000/api/get-all-language-page?slug=${slug}`,
+        `${process.env.slug_Api}?slug=${slug}`,
         { method: "get" }
       );
       let fullDataInJson = await mainData.json();
@@ -51,9 +52,7 @@ const Slug = (props) => {
 
 export async function getServerSideProps(context) {
   let { slug } = context.query;
-  let data = await fetch(
-    `http://localhost:3000/api/get-all-language-page?slug=${slug}`
-  );
+  let data = await fetch(`${process.env.slug_Api}?slug=${slug}`);
   let myProps = await data.json();
   context.res.setHeader(
     "Cache-Control",
