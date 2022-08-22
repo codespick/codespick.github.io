@@ -9,7 +9,8 @@ const Slug = (props) => {
   const getAnswer = async () => {
     try {
       let mainData = await fetch(
-        `http://localhost:3000/api/get-all-language-page?slug=${slug}`
+        `http://localhost:3000/api/get-all-language-page?slug=${slug}`,
+        { method: "get" }
       );
       let fullDataInJson = await mainData.json();
       setBlog(fullDataInJson);
@@ -49,11 +50,16 @@ const Slug = (props) => {
 };
 
 export async function getServerSideProps(context) {
-  let slug = context.query.slug;
+  let { slug } = context.query;
   let data = await fetch(
     `http://localhost:3000/api/get-all-language-page?slug=${slug}`
   );
   let myProps = await data.json();
+  context.res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+  // context.res.writeHead(307, { Location: `/tutorial/${slug}` }).end();
 
   return {
     props: { myProps }, // will be passed to the page component as props
