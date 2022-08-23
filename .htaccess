@@ -1,0 +1,20 @@
+<!-- <rewrite>
+        <rules>
+            <remove name="Http to Https" />
+            <rule name="Http to Https" enabled="true" patternSyntax="Wildcard" stopProcessing="true">
+                <match url="*" />
+                <conditions>
+                    <add input="{HTTPS}" pattern="off" />
+                </conditions>
+                <serverVariables />
+                <action type="Redirect" url="https://codespick.herokuapp.com" />
+            </rule>
+        </rules>
+    </rewrite> -->
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^codespick.herokuapp.com$
+RewriteRule (.*) http://www.codespick.herokuapp.com$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} !^www\.codespick.herokuapp\.com [NC]
+RewriteRule (.*) https://www.codespick.herokuapp.com/$1 [L,R=301]
