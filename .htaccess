@@ -12,9 +12,9 @@
         </rules>
     </rewrite> -->
 
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^codespick.herokuapp.com$
-RewriteRule (.*) http://www.codespick.herokuapp.com$1 [R=301,L]
-
-RewriteCond %{HTTP_HOST} !^www\.codespick.herokuapp\.com [NC]
-RewriteRule (.*) https://www.codespick.herokuapp.com/$1 [L,R=301]
+# Canonical https/www
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTPS} off RewriteRule (.*) https://codespick.herokuapp.com
+  [L,R=301] RewriteCond %{HTTP_HOST} !^www\. [NC] RewriteRule (.*)
+  https://www.codespick.herokuapp.com [L,R=301]
+</IfModule>
