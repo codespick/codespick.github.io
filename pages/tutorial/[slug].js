@@ -11,7 +11,7 @@ const Slug = (props) => {
       // router.reload()
       let mainData = await fetch(
         `${
-          process.env.slug_Api_http || process.env.slug_Api_https
+          process.env?.slug_Api_http || process.env?.slug_Api_https
         }?slug=${slug}`,
         {
           method: "get",
@@ -84,7 +84,7 @@ const Slug = (props) => {
 export async function getServerSideProps(context) {
   let { slug } = context.query;
   let data = await fetch(
-    `${process.env.slug_Api_http || process.env.slug_Api_https}?slug=${slug}`,
+    `${process.env?.slug_Api_http || process.env?.slug_Api_https}?slug=${slug}`,
     {
       mode: "no-cors",
     }
