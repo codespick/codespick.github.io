@@ -33,6 +33,7 @@ const Navbar = () => {
     darkMode,
     router.isReady,
     dropdownMenuIcon,
+    showToggleMode,
   ]);
 
   const closeDropDown = () => {

@@ -20,7 +20,13 @@
 
 module.exports = {
   env: {
-    slug_Api: "https://codespick.herokuapp.com/api/get-all-language-page",
-    search_Api: "https://codespick.herokuapp.com/api/get-website",
+    slug_Api:
+      "http://codespick.herokuapp.com/api/get-all-language-page" ||
+      "https://codespick.herokuapp.com/api/get-all-language-page",
+    // "http://localhost:3000/api/get-all-language-page",
+    search_Api:
+      "http://codespick.herokuapp.com/api/get-website" ||
+      "https://codespick.herokuapp.com/api/get-website",
+    // "http://localhost:3000/api/get-website",
   },
 };

@@ -9,10 +9,9 @@ const Slug = (props) => {
   const getAnswer = async () => {
     try {
       // router.reload()
-      let mainData = await fetch(
-        `${process.env.slug_Api}?slug=${slug}`,
-        { method: "get" }
-      );
+      let mainData = await fetch(`${process.env.slug_Api}?slug=${slug}`, {
+        method: "get",
+      });
       let fullDataInJson = await mainData.json();
       setBlog(fullDataInJson);
     } catch (err) {
@@ -23,7 +22,7 @@ const Slug = (props) => {
   useEffect(() => {
     if (!router.isReady) return;
     getAnswer();
-  }, [router.isReady, slug]);
+  }, [router.isReady, slug, props.myProps]);
   return (
     <>
       <div>
@@ -32,13 +31,40 @@ const Slug = (props) => {
             return (
               <div key={v.slug}>
                 <Head>
-                  <title>{v.title} Tutorial | CodesPick</title>
+                  <title>
+                    {v.title} Tutorial | CodesPick | CodesPick Herokuapp.com
+                  </title>
+                  <meta name="robots" content="index, follow" />
+                  <link
+                    rel="canonical"
+                    href="https://codespick.herokuapp.com/"
+                  />
+                  <meta content="general" name="rating" />
+                  <link
+                    rel="prefetch"
+                    href="https://codespick.herokuapp.com/"
+                  />
+                  <meta content="codespick.herokuapp.com" name="copyright" />
+                  <link
+                    rel="prerender"
+                    href="https://codespick.herokuapp.com/"
+                  />
                   <meta
                     name="description"
-                    content="This is CodesPick. A Website to learn C Language"
+                    content={`CodesPick - ${v.title}, CodesPick is a platform to learn code with programming language ${v.title}`}
                   />
-                  {/* <meta name="robots" content="index, follow" /> */}
-                  {/* <link rel="canonical" href="https://yourwebsite.com/" /> */}
+                  <meta
+                    name="keywords"
+                    content={`CodesPick - ${v.title}, CodesPick is a platform to learn code with programming language ${v.title}`}
+                  />
+                  <meta property="og:site_name" content="CodesPick" />
+                  <meta property="og:title" content="CodesPick" />
+                  <meta property="og:type" content="website" />
+                  <meta
+                    property="og:url"
+                    content="https://codespick.herokuapp.com/"
+                  />
+                  <meta property="og:locale" content="en-US" />
                 </Head>
                 <h1>{v.title}</h1>
                 <p>{v.desc}</p>
@@ -52,7 +78,9 @@ const Slug = (props) => {
 
 export async function getServerSideProps(context) {
   let { slug } = context.query;
-  let data = await fetch(`${process.env.slug_Api}?slug=${slug}`);
+  let data = await fetch(`${process.env.slug_Api}?slug=${slug}`, {
+    mode: "no-cors",
+  });
   let myProps = await data.json();
   context.res.setHeader(
     "Cache-Control",

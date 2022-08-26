@@ -193,6 +193,12 @@
 }
 
 @media only screen and (max-width:990px) {
+  .navbar{
+    position:sticky;
+    top:0px;
+    left:0px;
+  }
+  
   .toggle-icon-mobile {
     margin-top: 2px
   }
