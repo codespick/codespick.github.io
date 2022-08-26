@@ -14,7 +14,9 @@ const Search = (props) => {
         return;
       } else if (props.fullData.q !== undefined) {
         let mainData = await fetch(
-          `${process.env.search_Api}?q=${props.fullData.q}`,
+          `${process.env.search_Api_http || process.env.search_Api_https}?q=${
+            props.fullData.q
+          }`,
           { mode: "no-cors" }
         );
         let fullDataInJson = await mainData.json();
@@ -110,9 +112,12 @@ export async function getServerSideProps(context) {
 
   let { q } = context.query;
 
-  let data = await fetch(`${process.env.search_Api}?q=${q}`, {
-    mode: "no-cors",
-  });
+  let data = await fetch(
+    `${process.env.search_Api_http || process.env.search_Api_https}?q=${q}`,
+    {
+      mode: "no-cors",
+    }
+  );
 
   // let fullData = await data1.text();
   let fullData = await data.json();

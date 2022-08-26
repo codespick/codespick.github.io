@@ -9,9 +9,14 @@ const Slug = (props) => {
   const getAnswer = async () => {
     try {
       // router.reload()
-      let mainData = await fetch(`${process.env.slug_Api}?slug=${slug}`, {
-        method: "get",
-      });
+      let mainData = await fetch(
+        `${
+          process.env.slug_Api_http || process.env.slug_Api_https
+        }?slug=${slug}`,
+        {
+          method: "get",
+        }
+      );
       let fullDataInJson = await mainData.json();
       setBlog(fullDataInJson);
     } catch (err) {
@@ -78,9 +83,12 @@ const Slug = (props) => {
 
 export async function getServerSideProps(context) {
   let { slug } = context.query;
-  let data = await fetch(`${process.env.slug_Api}?slug=${slug}`, {
-    mode: "no-cors",
-  });
+  let data = await fetch(
+    `${process.env.slug_Api_http || process.env.slug_Api_https}?slug=${slug}`,
+    {
+      mode: "no-cors",
+    }
+  );
   let myProps = await data.json();
   context.res.setHeader(
     "Cache-Control",
