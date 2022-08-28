@@ -21,8 +21,6 @@
 module.exports = {
   env: {
     slug_Api_https: "https://codespick.herokuapp.com/api/get-all-language-page",
-    slug_Api_http: "http://codespick.herokuapp.com/api/get-all-language-page",
     search_Api_https: "https://codespick.herokuapp.com/api/get-website",
-    search_Api_http: "http://codespick.herokuapp.com/api/get-website",
   },
 };
